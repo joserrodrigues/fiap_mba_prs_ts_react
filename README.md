@@ -1,27 +1,24 @@
-# See <https://help.github.com/articles/ignoring-files/> for more about ignoring files
+# fiap_mba_prs_ts_react
 
-# dependencies
+Código utilizado durante as aulas de React ministradas no MBA da FIAP
 
-/node_modules
-/.pnp
-.pnp.js
+Este projeto foi criado com [Create React App](https://github.com/facebook/create-react-app).
 
-# testing
+## Scrips disponíveis
 
-/coverage
+Nesse projeto você pode rodar
 
-# production
+### `npm install`
 
-/build
+Instalar os pacotes necessário para rodar o aplicativo
 
-# misc
+### `npm start`
 
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+Roda o aplicativo em modo de desenvolvimento.\
+Abra [http://localhost:3000](http://localhost:3000) para visualizá-lo no seu navegador.
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+### `npm run build`
+
+Constroi o aplicativo para produção na pasta `build`.\
+
+Seu aplicativo estará pronto para ser enviado ao servidor!

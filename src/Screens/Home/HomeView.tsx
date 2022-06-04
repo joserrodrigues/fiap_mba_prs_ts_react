@@ -1,96 +1,33 @@
 import "./Home.css";
-import { Container, Row, Col, Button, Card } from "react-bootstrap";
+import * as React from "react";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import Button from "@mui/material/Button";
 
 interface IProps {
   info: number;
 }
 
-const HomeView: React.FC<IProps> = (props) => {
+const HomeView: React.FC<IProps> = ({ info }) => {
   return (
-    <Container>
-      <Row>
-        <Col sm={12} md={6} lg={4}>
-          <Card style={{ width: "18rem", marginBottom: 10 }}>
-            <Card.Img
-              variant="top"
-              src="https://picsum.photos/seed/picsum/300/200"
-            />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col sm={12} md={6} lg={4}>
-          <Card style={{ width: "18rem", marginBottom: 10 }}>
-            <Card.Img
-              variant="top"
-              src="https://picsum.photos/seed/picsum/300/200"
-            />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col sm={12} md={6} lg={4}>
-          <Card style={{ width: "18rem", marginBottom: 10 }}>
-            <Card.Img
-              variant="top"
-              src="https://picsum.photos/seed/picsum/300/200"
-            />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col sm={12} md={6} lg={4}>
-          <Card style={{ width: "18rem", marginBottom: 10 }}>
-            <Card.Img
-              variant="top"
-              src="https://picsum.photos/seed/picsum/300/200"
-            />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col sm={12} md={6} lg={4}>
-          <Card style={{ width: "18rem", marginBottom: 10 }}>
-            <Card.Img
-              variant="top"
-              src="https://picsum.photos/seed/picsum/300/200"
-            />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+    <Grid
+      container
+      spacing={0}
+      direction="column"
+      justifyContent="center"
+      alignItems="center"
+      className="container"
+    >
+      <Typography gutterBottom variant="h1" color="primary.dark">
+        Info {info}
+      </Typography>
+      <Typography gutterBottom variant="h1" color="secondary.dark">
+        Info {info}
+      </Typography>
+      <Button color="primary"> Primary </Button>
+      <Button color="secondary"> Secondary </Button>
+      <Button color="success"> Success </Button>
+    </Grid>
   );
 };
 
