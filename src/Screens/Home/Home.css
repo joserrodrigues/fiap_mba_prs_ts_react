@@ -2,8 +2,12 @@ body {
     background-color: black;
 }
 
-.App {
+.text {
     text-align: center;
-    font-size: 28px;
+    font-size: 35px;
     color: #ed145b;
+}
+
+.container {
+    margin-top: 180px;
 }
