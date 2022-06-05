@@ -1,4 +1,3 @@
-import "./Home.css";
 import * as React from "react";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
