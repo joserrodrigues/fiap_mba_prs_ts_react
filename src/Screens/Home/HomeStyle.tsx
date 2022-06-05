@@ -8,22 +8,6 @@ export const Main = styled.div`
   margin-top: 180px;
 `;
 
-export const Box = styled(Main)`
-  background: white;
-  ${media.lessThan("medium")`
-    /* screen width < 768px */
-    background: red;
-  `}
-  ${media.between("medium", "large")`
-    /* screen width - 768px | 1170px */
-    background: green;
-  `}
-  ${media.greaterThan("large")`
-    /* screen width - 1170px */
-    background: #00000010;
-  `}
-`;
-
 export const AcUnitIconCustom = styled(AcUnitIcon)`
   color: #ff0000
 `;
