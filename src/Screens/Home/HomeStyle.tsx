@@ -1,15 +1,11 @@
-import { FC} from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 import Typography from "@mui/material/Typography";
-import AcUnitIcon from "@mui/icons-material/AcUnit";
-import media from "styled-media-query";
+import { Link } from "react-router-dom";
+import Colors from "../../Utils/Common/Colors";
 
 export const Main = styled.div`
   margin-top: 180px;
-`;
-
-export const AcUnitIconCustom = styled(AcUnitIcon)`
-  color: #ff0000
 `;
 
 export const Title = styled(Typography)`
@@ -18,10 +14,17 @@ export const Title = styled(Typography)`
   line-height: 60px
 }`;
 
+export const CustomLink = styled(Link)`
+  && {
+    text-align: center;
+    font-size: 16vm;
+    color: ${Colors.PrimaryMedium};
+  }
+`;
+
 type CustomBoxType = {
   color: string;
 };
-
 const Box2 = styled(Main)`
   && {
     text-align: center;
