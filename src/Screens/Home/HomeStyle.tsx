@@ -9,7 +9,6 @@ export const Main = styled.div`
 export const Title = styled(Typography)`
   && {
     text-align: center;
-    font-size: 28px;
     margin-top: 100px;
     margin-bottom: 40px;
   }
