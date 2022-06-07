@@ -3,6 +3,7 @@ import { FC } from "react";
 import Grid from "@mui/material/Grid";
 import { Title, TableHeaderStyle, TableRowStyle, TableSearchFieldStyle } from "./HomeStyle";
 import MaterialTable, { Query, QueryResult } from "material-table";
+import { Button } from "@mui/material";
 
 type IProps = {
   loading: boolean;
@@ -10,9 +11,10 @@ type IProps = {
   getData: (
     query: Query<{ [x: string]: {} }>
   ) => Promise<QueryResult<{ [x: string]: {} }>>;
+  onAddPage: () => void;
 };
 
-const HomeView: FC<IProps> = ({ loading, onChangePage, getData }) => {
+const HomeView: FC<IProps> = ({ loading, onChangePage, getData, onAddPage }) => {
   const columns = [
     { title: "SobreNome", field: "lastName" },
     { title: "Nome", field: "firstName" },
@@ -31,6 +33,11 @@ const HomeView: FC<IProps> = ({ loading, onChangePage, getData }) => {
         <Title gutterBottom variant="h1" color="primary.dark">
           Lista de Colaboradores
         </Title>
+      </Grid>
+      <Grid item xs={12}>
+        <Button variant="primary" onClick={() => onAddPage()}>
+          Adicionar Colaborador
+        </Button>
       </Grid>
       <Grid item lg={12}>
         <MaterialTable
