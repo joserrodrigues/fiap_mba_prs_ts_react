@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef } from "react";
+import { FC, useEffect, useRef, useContext } from "react";
 import useAPI, { useApiReturnType } from "../../Services/APIs/Common/useAPI";
 import { getAllPersons } from "../../Services/APIs/Persons/Persons";
 import HomeView from "./HomeView";
@@ -6,11 +6,17 @@ import { useGeolocated } from "react-geolocated";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 import { Person } from "../../Models/Person";
 import { QueryResult } from "material-table";
+import Header from '../../Components/Header/Header'
+import UserInfoContext, {
+  UserInfoContextType,
+} from "../../Store/UserInfo/UserInfoContext";
+
 
 const HomeController: FC = () => {
   const getPersonsGetAPI: useApiReturnType = useAPI(getAllPersons);
   const userCoordinates = useRef<GeolocationCoordinates | null>(null);
   const navigate: NavigateFunction = useNavigate();
+  const context = useContext<UserInfoContextType>(UserInfoContext);
 
   const { coords, isGeolocationAvailable, isGeolocationEnabled } =
     useGeolocated({
@@ -81,12 +87,16 @@ const HomeController: FC = () => {
   };
 
   return (
-    <HomeView
-      loading={getPersonsGetAPI.loading}
-      onChangePage={onChangePage}
-      getData={getData}
-      onAddPage={onAddPage}
-    />
+    <>
+      <Header />
+      <HomeView
+        loading={getPersonsGetAPI.loading}
+        onChangePage={onChangePage}
+        getData={getData}
+        onAddPage={onAddPage}
+        userName={context.userInfo.userName + ""}
+      />
+    </>
   );
 
 };

@@ -19,15 +19,3 @@ export const CustomErrorMessage = styled(ErrorMessage)`
 export const CircularProgressDiv = styled.div`
     margin-top: 30px;
 `;
-
-
-/*
-.infoError{
-    font-weight: bold;
-    color: white !important;
-}
-
-.divButtons{
-    margin-top: 40px;;
-}
-*/

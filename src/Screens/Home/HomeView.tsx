@@ -12,9 +12,10 @@ type IProps = {
     query: Query<{ [x: string]: {} }>
   ) => Promise<QueryResult<{ [x: string]: {} }>>;
   onAddPage: () => void;
+  userName: string;
 };
 
-const HomeView: FC<IProps> = ({ loading, onChangePage, getData, onAddPage }) => {
+const HomeView: FC<IProps> = ({ loading, onChangePage, getData, onAddPage, userName}) => {
   const columns = [
     { title: "SobreNome", field: "lastName" },
     { title: "Nome", field: "firstName" },
@@ -31,7 +32,7 @@ const HomeView: FC<IProps> = ({ loading, onChangePage, getData, onAddPage }) => 
     >
       <Grid item xs={12}>
         <Title gutterBottom variant="h1" color="primary.dark">
-          Lista de Colaboradores
+          Lista de Colaboradores, {userName}
         </Title>
       </Grid>
       <Grid item xs={12}>
